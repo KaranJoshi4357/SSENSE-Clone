@@ -7,36 +7,44 @@ const wearMenu = [
   {
     to: "/mens",
     title: "MENSWEAR",
+    id: 1,
   },
   {
     to: "/womens",
     title: "WOMENSWEAR",
+    id: 2,
   },
   {
     to: "/every",
     title: " EVERYTHING ELSE",
+    id: 3,
   },
   {
     to: "/sale",
     title: "SALE",
+    id: 4,
   },
 ];
 
 const loginMenu = [
   {
     title: "English",
+    id: 5,
   },
   {
     to: "/login",
     title: "Login",
+    id: 6,
   },
   {
     to: "/wishlist",
     title: "wishlist",
+    id: 7,
   },
   {
     to: "/shopping bag",
     title: "shopping bag",
+    id: 8,
   },
 ];
 const baseStyle = {
@@ -57,13 +65,13 @@ function Navbar() {
     >
       <Box>
         <Flex gap={5}>
-          {wearMenu.map((item) => {
+          {wearMenu.map((item, index) => {
             return (
               <div>
                 <NavLink
                   style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
                   className="navFont"
-                  key={item.title}
+                  key={index}
                   to={item.to}
                 >
                   {item.title}
@@ -76,25 +84,22 @@ function Navbar() {
       </Box>
       {/* <Spacer /> */}
       <Box>
-        <Link to="/">
+        <NavLink to="/">
           <Text
             style={{ paddingRight: "130px" }}
             fontSize="2xl"
             fontWeight="600"
+            key={1000}
           >
             SSENSE
           </Text>
-        </Link>
+        </NavLink>
       </Box>
       {/* <Spacer /> */}
       <Box>
         <Flex gap={5}>
-          {loginMenu.map((item) => (
-            <NavLink
-              className="navFont"
-              key={item.title}
-              to={item.to || item.title}
-            >
+          {loginMenu.map((item, index) => (
+            <NavLink className="navFont" key={index} to={item.to || item.title}>
               {item.title}
             </NavLink>
           ))}

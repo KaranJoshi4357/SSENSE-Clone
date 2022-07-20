@@ -1,12 +1,27 @@
-import { Button, Image } from "@chakra-ui/react";
+import { Badge, Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
-function ProductHomeAd() {
+function ProductHomeAd({ src, text, btnText }) {
   return (
-    <div>
-      <Image src="https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1658150202/st2b4kpcidbuymyne5q6.jpg" />
-      <Button>SHOP MENSWEAR</Button>
-    </div>
+    <Box my={5} maxH={"full"}>
+      <Image src={src} />
+      <Flex mt={2} alignItems={"center"}>
+        <Badge p={1} fontWeight={"normal"}>
+          Featured
+        </Badge>
+        <Text ml={5} textTransform={"uppercase"} fontSize="2xl">
+          {text}
+        </Text>
+      </Flex>
+      <Button
+        variant={"outline"}
+        borderRadius={10}
+        mt={3}
+        textTransform={"uppercase"}
+      >
+        {btnText}
+      </Button>
+    </Box>
   );
 }
 

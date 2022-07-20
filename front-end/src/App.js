@@ -6,7 +6,7 @@ import { Container } from "@chakra-ui/react";
 
 function App() {
   return (
-    <Container maxW="6xl">
+    <Container maxW="6xl" maxH="12xl">
       <Navbar />
       <AllRoutes />
     </Container>
