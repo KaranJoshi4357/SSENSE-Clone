@@ -184,9 +184,9 @@ function Home() {
           <ProductHomeAd src={y3w} text={"y-3"} btnText={"shop womenswear"} />
         </Flex>
       </Box>
-      <Box textAlign={"center"} m={5}>
+      {/* <Box textAlign={"center"} m={5}>
         <Footer />
-      </Box>
+      </Box> */}
     </Box>
   );
 }

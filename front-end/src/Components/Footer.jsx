@@ -1,6 +1,8 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+
 const navLink = [
   {
     to: "/",
@@ -62,18 +64,30 @@ function Footer() {
   return (
     <Box>
       <Box>
-        {navLink.map((item) => (
-          <Link className="footerLinks" key={item.to} to={item.to}>
-            {item.text}
-          </Link>
-        ))}
+        <Flex justifyContent={"center"}>
+          {navLink.map((item) => (
+            <Link className="footerLinks" key={item.to} to={item.to}>
+              {item.text}
+            </Link>
+          ))}
+          <Box>
+            <Flex gap={4}>
+              <FaFacebook cursor={"pointer"} />
+              <FaTwitter cursor={"pointer"} />
+              <FaInstagram cursor={"pointer"} />
+              <FaYoutube cursor={"pointer"} />
+            </Flex>
+          </Box>
+        </Flex>
       </Box>
       <Box>
-        {siteFooter.map(({ to, text }) => (
-          <Link className="siteFooter" to={to} key={to}>
-            {text}
-          </Link>
-        ))}
+        <Flex justifyContent={"center"} my={2}>
+          {siteFooter.map(({ to, text }) => (
+            <Link className="siteFooter" to={to} key={to}>
+              {text}
+            </Link>
+          ))}
+        </Flex>
       </Box>
     </Box>
   );

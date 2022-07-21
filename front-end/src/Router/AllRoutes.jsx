@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../Components/Home";
+import Login from "../Components/LoginComponent/Login";
+import PrivateRoute from "../Components/PrivateRoute";
 
 const routeSet = [
   {
@@ -9,11 +11,11 @@ const routeSet = [
   },
   {
     path: "/mens",
-    element: "About",
+    element: <PrivateRoute>"About"</PrivateRoute>,
   },
   {
     path: "/womens",
-    element: "Women",
+    element: <PrivateRoute>"Womens"</PrivateRoute>,
   },
   {
     path: "/every",
@@ -23,7 +25,12 @@ const routeSet = [
     path: "/sale",
     element: "Sale",
   },
+  {
+    path: "/login",
+    element: <Login />,
+  },
 ];
+
 function AllRoutes() {
   return (
     <Routes>
