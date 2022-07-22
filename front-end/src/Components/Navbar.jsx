@@ -3,16 +3,19 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../images/navlogo.svg";
 import navLogo from "../images/SSENSE.png";
+import { getProduct } from "./ProductComponents/productApi";
 const wearMenu = [
   {
     to: "/mens",
     title: "MENSWEAR",
     id: 1,
+    sname: "men",
   },
   {
     to: "/womens",
     title: "WOMENSWEAR",
     id: 2,
+    sname: "women",
   },
   {
     to: "/every",
@@ -64,7 +67,7 @@ function Navbar() {
       justifyContent="space-between"
     >
       <Box>
-        <Flex gap={5}>
+        <Flex gap={5} alignItems="center">
           {wearMenu.map((item, index) => {
             return (
               <div>
@@ -79,7 +82,13 @@ function Navbar() {
               </div>
             );
           })}
-          <Box>Search</Box>
+          <Box
+            fontFamily={"Favorit SSENSE Inter"}
+            textTransform="uppercase"
+            fontSize={"14px"}
+          >
+            Search
+          </Box>
         </Flex>
       </Box>
       {/* <Spacer /> */}
