@@ -10,6 +10,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { lowToHigh } from "./productApi";
 function Category() {
   return (
     <Box boxSize={"200px"}>
@@ -27,11 +28,11 @@ function Category() {
             ALL COLORS
           </AccordionPanel>
           <AccordionPanel pb={4}>Black</AccordionPanel>
+          <AccordionPanel pb={4}>Red</AccordionPanel>
+          <AccordionPanel pb={4}>Yellow</AccordionPanel>
           <AccordionPanel pb={4}>Blue</AccordionPanel>
-          <AccordionPanel pb={4}>Blue</AccordionPanel>
-          <AccordionPanel pb={4}>
-            <Link to="/">Black</Link>
-          </AccordionPanel>
+          <AccordionPanel pb={4}>Orange</AccordionPanel>
+          <AccordionPanel pb={4}>Saffron</AccordionPanel>
         </AccordionItem>
       </Accordion>
     </Box>
@@ -65,17 +66,11 @@ export function SortBy() {
     <Box>
       <Text fontSize={"14px"}>SORT</Text>
       <Flex direction={"column"}>
-        <Link to="/" fontSize={"12px"}>
+        <Link to="" fontSize={"12px"}>
           Latest Arrivals
         </Link>
-        <Link to="/" fontSize={"12px"}>
+        <Link to="" fontSize={"12px"}>
           Trending
-        </Link>
-        <Link to="/" fontSize={"12px"}>
-          Price: Low to High
-        </Link>
-        <Link to="/" fontSize={"12px"}>
-          Price: High to Low
         </Link>
       </Flex>
     </Box>

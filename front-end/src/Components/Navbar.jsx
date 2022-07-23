@@ -1,9 +1,12 @@
 import { Flex, Spacer, Box, Image, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext } from "react";
+import { useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 import logo from "../images/navlogo.svg";
 import navLogo from "../images/SSENSE.png";
 import { getProduct } from "./ProductComponents/productApi";
+
 const wearMenu = [
   {
     to: "/mens",
@@ -29,27 +32,27 @@ const wearMenu = [
   },
 ];
 
-const loginMenu = [
-  {
-    title: "English",
-    id: 5,
-  },
-  {
-    to: "/login",
-    title: "Login",
-    id: 6,
-  },
-  {
-    to: "/wishlist",
-    title: "wishlist",
-    id: 7,
-  },
-  {
-    to: "/shopping bag",
-    title: "shopping bag",
-    id: 8,
-  },
-];
+// const loginMenu = [
+//   {
+//     title: "English",
+//     id: 5,
+//   },
+//   {
+//     to: "/login",
+//     title: "Log In",
+//     id: 6,
+//   },
+//   {
+//     to: "/wishlist",
+//     title: "wishlist",
+//     id: 7,
+//   },
+//   {
+//     to: "/shoping-bag",
+//     title: "shopping bag",
+//     id: 8,
+//   },
+// ];
 const baseStyle = {
   color: "black",
   borderBottom: "none",
@@ -59,6 +62,21 @@ const activeStyle = {
   borderBottom: "1px solid black",
 };
 function Navbar() {
+  const [state, dispatch] = useContext(AuthContext);
+  let logRef = useRef();
+  let auth = state.isAuth;
+
+  const LogOut = () => {
+    dispatch({
+      type: "LOGOUT_SUCCESS",
+    });
+  };
+
+  const LogIn = () => {
+    dispatch({
+      type: "LOGIN_SUCCESS",
+    });
+  };
   return (
     <Flex
       // position={"fixed"}
@@ -70,7 +88,7 @@ function Navbar() {
         <Flex gap={5} alignItems="center">
           {wearMenu.map((item, index) => {
             return (
-              <div>
+              <div key={index}>
                 <NavLink
                   style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
                   className="navFont"
@@ -107,11 +125,23 @@ function Navbar() {
       {/* <Spacer /> */}
       <Box>
         <Flex gap={5}>
-          {loginMenu.map((item, index) => (
+          {/* {loginMenu.map((item, index) => (
             <NavLink className="navFont" key={index} to={item.to || item.title}>
               {item.title}
             </NavLink>
-          ))}
+          ))} */}
+          <NavLink to="" className="navFont">
+            English
+          </NavLink>
+          <NavLink to="/login" className="navFont" ref={logRef}>
+            {auth ? "Log Out" : "Log In"}
+          </NavLink>
+          <NavLink to="/wishlist" className="navFont">
+            Wishlist
+          </NavLink>
+          <NavLink to="/shoping-bag" className="navFont">
+            Shoping Bag
+          </NavLink>
         </Flex>
       </Box>
     </Flex>
