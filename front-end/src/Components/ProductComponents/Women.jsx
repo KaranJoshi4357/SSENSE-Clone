@@ -1,8 +1,8 @@
 import { Box, Flex, Grid } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Category, { AllCategories, SortBy } from "./Category";
-import { getWomenProduct } from "./productApi";
+import { getWomenProduct, highToLowWomen, lowToHighWomen } from "./productApi";
 import ProductCard from "./ProductCard";
 
 function Womens() {
@@ -15,6 +15,13 @@ function Womens() {
   const getProducts = () => {
     getWomenProduct().then((res) => setData(res));
   };
+  function handelSort() {
+    console.log("clicked");
+    return lowToHighWomen().then((res) => setData(res));
+  }
+  function highSort() {
+    return highToLowWomen().then((res) => setData(res));
+  }
   console.log(data);
   return (
     <Box mt={10}>
@@ -29,17 +36,35 @@ function Womens() {
             alignContent={"center"}
           >
             {data.map((item) => (
-              <ProductCard
-                src={item.img_url}
-                title={item.name}
-                price={item.price}
-              />
+              <Link to={`/product/${item.id}`}>
+                <Box key={item.id}>
+                  <ProductCard
+                    src={item.img_url}
+                    title={item.name}
+                    price={item.price}
+                  />
+                </Box>
+              </Link>
             ))}
           </Grid>
         </Box>
         <Box>
           <Box mb={5}>
             <SortBy />
+            <Box
+              fontSize={"13px"}
+              cursor={"pointer"}
+              onClick={() => handelSort()}
+            >
+              Price: Low to High
+            </Box>
+            <Box
+              fontSize={"13px"}
+              cursor={"pointer"}
+              onClick={() => highSort()}
+            >
+              Price: High to Low
+            </Box>
           </Box>
           <Category />
         </Box>
