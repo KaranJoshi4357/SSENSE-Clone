@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../Components/Home";
 import Login from "../Components/LoginComponent/Login";
 import PrivateRoute from "../Components/PrivateRoute";
+import Mens from "../Components/ProductComponents/Mens";
+import Womens from "../Components/ProductComponents/Women";
 
 const routeSet = [
   {
@@ -11,11 +13,20 @@ const routeSet = [
   },
   {
     path: "/mens",
-    element: <PrivateRoute>"About"</PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        {" "}
+        <Mens />{" "}
+      </PrivateRoute>
+    ),
   },
   {
     path: "/womens",
-    element: <PrivateRoute>"Womens"</PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <Womens />
+      </PrivateRoute>
+    ),
   },
   {
     path: "/every",
@@ -28,6 +39,9 @@ const routeSet = [
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/product/:product_id",
   },
 ];
 
