@@ -14,9 +14,9 @@
 ## Which Tech Stack Applied In Project
 
   <ol>  
-  <li>1. React Js : Front End Components</li>
-  <li>2. Chakra UI : Front End Design </li>
-  <li>3. JSON Server : Storeing Data And Updating </li>
+  <li> React Js : Front End Components</li>
+  <li> Chakra UI : Front End Design </li>
+  <li> JSON Server : Storeing Data And Updating </li>
   </ol>
 
 ## Happy Coding :)
