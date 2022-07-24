@@ -5,6 +5,7 @@ import {
   Image,
   SimpleGrid,
   Text,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
@@ -18,6 +19,7 @@ import { cartPostData, getData } from "../CartComponents/cartApi";
 function ShowFullProd() {
   let params = useParams();
   let [data, setData] = useState([]);
+  const toast = useToast();
   useEffect(() => {
     getProductById(params.product_id).then((res) => setData(res));
   }, []);
@@ -33,6 +35,13 @@ function ShowFullProd() {
       gender,
       category,
       qty,
+    });
+    toast({
+      title: "Item Added In Cart.",
+
+      status: "success",
+      duration: 2000,
+      isClosable: true,
     });
   };
 

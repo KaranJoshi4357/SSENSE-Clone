@@ -70,6 +70,7 @@ function Login() {
               focusBorderColor={"black"}
               value={email}
               onChange={handleInputChange}
+              placeholder="testaccount@test.com"
             />
           </FormControl>
           <FormControl mt={2} isRequired>
@@ -80,6 +81,7 @@ function Login() {
               focusBorderColor={"black"}
               value={password}
               onChange={handelPassword}
+              placeholder="test1234"
             />
           </FormControl>
           <FormControl>
