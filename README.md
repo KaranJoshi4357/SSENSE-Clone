@@ -31,44 +31,27 @@
 
 
 
-
-- *Login*
-
-  ![Screenshot (902)](https://user-images.githubusercontent.com/101388961/187072383-f2b7dc1d-a779-4ff0-9b72-d3fd183d965e.png)
-
 - *Login Page*
 
-  ![Screenshot (903)](https://user-images.githubusercontent.com/101388961/187072435-a650faf1-acc9-4981-bc6d-569b5f4625b3.png)
-
-- *Software CRM Page*
-
-  ![Screenshot (904)](https://user-images.githubusercontent.com/101388961/187072477-16c1725c-f901-498e-9e2f-7291c7ac8be2.png)
-
-- *Pricing Page*
-
-  ![Screenshot (905)](https://user-images.githubusercontent.com/101388961/187072525-c33b064c-458b-4951-bb91-ecc51159043a.png)
+  ![2](https://user-images.githubusercontent.com/58625638/193229800-c7866ee8-f871-4f1e-bab4-7f3968e8e84e.PNG)
 
 
-- *Subscription Page*
+- *Product Page*
 
-  ![Screenshot (906)](https://user-images.githubusercontent.com/101388961/187072568-e89f3c34-031c-428d-b91e-48fef92e9bd2.png)
-
-- *Review Page*
-
-  ![Screenshot (909)](https://user-images.githubusercontent.com/101388961/187072596-85d7265b-8b26-437a-b331-93b9cff2bf6c.png)
-
-  - *Contact-us Page*
-
-  ![Screenshot (908)](https://user-images.githubusercontent.com/101388961/187072626-1f8c1c34-ff58-4347-b849-d662dda34811.png)
+  ![3](https://user-images.githubusercontent.com/58625638/193229919-0acd8ecd-b1cc-416b-8edc-24b20e41bcca.PNG)
 
 
----
+- *Cart Page*
+
+ ![4](https://user-images.githubusercontent.com/58625638/193229999-4055143f-158a-4d00-aecd-15118ff4cb0f.PNG)
+
+  
 
  
 <h1>WEBSITE USER FLOW ></h1>
 
 The user flow that we tried to maintain is,
 
-home -> login -> dashboard -> create user Id-> Enter email details -> 
-Enter password -> Landing page-> -> Software page -> Pricing page -> Buy now.
+Home -> Login -> Products -> Add to bag -> Cart -> 
+Fill Address -> Check Out -> Payment -> Happy Shoping :)
 
