@@ -18,9 +18,6 @@
 
 ---
 
-### Netlify Link
- 
-  <a href="https://ssense-clone-eight.vercel.app/" target='_blank'>Live Preview</a>
  
  
  ### Following are the Screenshots for the reference
